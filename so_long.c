@@ -12,4 +12,5 @@ int	main(int argc, char **argv)
 	data = ft_calloc(1, sizeof(struct s_data));
 	if (!data)
 		return (0);
+	data->mlx = mlx_init();
 }
