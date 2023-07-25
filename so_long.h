@@ -6,12 +6,12 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/25 18:10:18 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/25 18:17:13 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
-# define SO_LONG.H
+# define SO_LONG_H
 
 # include <unistd.h>
 # include <stdlib.h>
