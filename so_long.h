@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/25 18:17:13 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/25 19:48:53 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include "./minilibx/mlx.h"
+# include "./libft/libft.h"
 
 struct s_data
 {
@@ -26,6 +27,8 @@ struct s_data
 	void	*mlx_img;
 	int		w;
 	int		h;
+	int		x;
+	int		y;
 	int		pos_c;
 	int		pos_p;
 	int		post_e;

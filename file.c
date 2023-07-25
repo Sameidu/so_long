@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/25 18:07:43 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/25 20:19:25 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void ft_ext(struct s_data *data, char *map)
 {
 	int i;
 	i = ft_strlen(map);
-	if (map[i - 4] != '.' || map[i - 3] != 'b' ||
-		map[i - 2] != 'e' || map[i - 1] != 'r')
+	if (!map || ft_strnstr(map + (ft_strlen(map) - 4), ".ber", 4))
 	{
-		ft_putstr("ERROR\nProblemas con la extensión del archivo");
+		ft_putstr_fd("ERROR\nProblemas con la extensión del archivo", 1);
 		ft_free(data);
 	}
 }
@@ -35,4 +34,5 @@ void ft_check_file(struct s_data *data, char *map)
 		ft_putstr("ERROR\nProblemas al leer el archivo");
 		ft_free(data);
 	}
+	ft_gnl()
 };
