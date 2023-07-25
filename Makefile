@@ -17,6 +17,7 @@ clean:
 
 fclean:		${clean}
 				${RM} ${OBJS}
+				
 re:			fclean all
 
 .PHONY:		all clean fclean re
