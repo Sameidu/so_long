@@ -2,8 +2,8 @@
 
 void	ft_initialize(struct s_data *data, char *map)
 {
-	ft_check_file(data, map);
-	ft_check_map(data);
+	//ft_check_file(data, map);
+	//ft_check_map(data);
 	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");
 }
 
@@ -13,7 +13,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		return (ft_putstr("ERROR\nIntroduce un mapa válido\n"));
+		ft_putstr("ERROR\nIntroduce un mapa válido\n");
 		return (0);
 	}
 	data = ft_calloc(1, sizeof(struct s_data));
