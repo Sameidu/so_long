@@ -4,13 +4,23 @@ SRCS =
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+MLX = ./minilibx/libmlx.a
+LIBFT = ./libft/libft.a
 RM = rm -f
 LIBX = -framework OpenGL -framework AppKit -lmlx
 
-${NAME}:	${OBJS}
-				${CC} ${CFLAGS} ${LIBX} ${OBJS} -o ${NAME}
 
-all: ${NAME}
+all: ${NAME} make_mlx
+
+make_mlx: 
+	make all -C ./minilibx
+
+make_libft: 
+	make all -C ./libft
+
+${NAME}:	${OBJS}
+				${CC} ${CFLAGS} ${MLX} ${LIBX} ${OBJS} -o ${NAME}
+
 
 clean:
 				${RM} ${OBJS}

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   file.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
+/*   Updated: 2023/07/25 18:07:43 by smeixoei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void	ft_ext(struct s_data *data, char *map)
+void ft_ext(struct s_data *data, char *map)
 {
-	int	i;
+	int i;
 	i = ft_strlen(map);
 	if (map[i - 4] != '.' || map[i - 3] != 'b' ||
 		map[i - 2] != 'e' || map[i - 1] != 'r')
@@ -12,9 +24,9 @@ void	ft_ext(struct s_data *data, char *map)
 	}
 }
 
-void	ft_check_file(struct s_data *data, char *map)
+void ft_check_file(struct s_data *data, char *map)
 {
-	int	fd;
+	int fd;
 
 	ft_ext(data, map);
 	fd = open(map, O_RDONLY);
@@ -23,5 +35,4 @@ void	ft_check_file(struct s_data *data, char *map)
 		ft_putstr("ERROR\nProblemas al leer el archivo");
 		ft_free(data);
 	}
-
 };

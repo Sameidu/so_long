@@ -1,11 +1,23 @@
-#ifndef SOLONG
-# define SOLONG
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
+/*   Updated: 2023/07/25 18:10:18 by smeixoei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <math.h>
-#include "./minilibx/mlx.h"
+#ifndef SO_LONG_H
+# define SO_LONG.H
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <math.h>
+# include "./minilibx/mlx.h"
 
 struct s_data
 {
