@@ -6,7 +6,7 @@
 #    By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 16:43:22 by smeixoei          #+#    #+#              #
-#    Updated: 2023/07/26 12:10:15 by smeixoei         ###   ########.fr        #
+#    Updated: 2023/07/26 16:01:43 by smeixoei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ SRCS_MAIN = ft_isdigit.c\
 			ft_putnbr_fd.c\
 			ft_strtrim.c\
 			ft_split.c\
+			get_next_line.c\
+			get_next_line_utils.c\
 
 SRCS_BONUS = ft_lstnew_bonus.c\
 				ft_lstadd_front_bonus.c\

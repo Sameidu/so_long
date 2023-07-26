@@ -3,17 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:23:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/06/28 18:37:29 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:58:42 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
+
+# include <fcntl.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <ctype.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -64,5 +73,10 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
+char	*ft_strchr_gnl(const char *s, int c);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+void	*ft_calloc_gnl(size_t count, size_t size);
+char	*get_next_line(int fd);
 
 #endif

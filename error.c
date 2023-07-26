@@ -6,13 +6,13 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:15:25 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/25 19:52:07 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:42:35 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-int	ft_free(struct s_data *data, char *str)
+int	ft_free(struct s_data *data)
 {
 	if (data)
 		free(data);
