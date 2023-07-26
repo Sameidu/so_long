@@ -6,13 +6,12 @@
 #    By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 19:15:17 by smeixoei          #+#    #+#              #
-#    Updated: 2023/07/26 16:02:45 by smeixoei         ###   ########.fr        #
+#    Updated: 2023/07/26 18:14:48 by smeixoei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long.a
 
-SRCS =
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -20,6 +19,9 @@ MLX = ./minilibx/libmlx.a
 LIBFT = ./libft/libft.a
 RM = rm -f
 LIBX = -framework OpenGL -framework AppKit -lmlx
+SRCS =	so_long.c\
+		error.c\
+		file.c\
 
 
 all: ${NAME} make_mlx

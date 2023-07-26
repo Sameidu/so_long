@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/25 19:48:53 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:26:30 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "./minilibx/mlx.h"
 # include "./libft/libft.h"
 
-struct s_data
+typedef struct s_data
 {
 	void	*mlx;
 	void	*mlx_win;
@@ -35,14 +35,10 @@ struct s_data
 	int		pos_1;
 	int		pos_0;
 	char	*map;	
-};
+}			t_game;
 
-void	ft_check_file(struct s_data *data, char *map);
-void	ft_error(struct s_data *data);
-int		ft_free(struct s_data *data);
-void	ft_putstr(char *s);
-size_t	ft_strlen(const char *str);
-void	*ft_calloc(size_t count, size_t size);
-char	*ft_strjoin(char *s1, char *s2);
+void	ft_check_file(t_game *data, char *map);
+void	ft_error(char *str);
+int		ft_ext(char *map);
 
 #endif

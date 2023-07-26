@@ -6,21 +6,14 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:15:25 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/26 15:42:35 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:23:54 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-int	ft_free(struct s_data *data)
+void	ft_error(char *str)
 {
-	if (data)
-		free(data);
-	exit(0);
-}
-
-void	ft_error(struct s_data *data)
-{
-	ft_putstr_fd("ERROR\nNo ha sido posible inicializar el programa.\n", 2);
-	ft_free(data);
+	ft_putstr_fd(str, 2);
+	exit (0);
 }
