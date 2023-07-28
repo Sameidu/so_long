@@ -11,3 +11,34 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_put_img(t_game *data)
+{
+	int	x;
+	int	y;
+
+	x = 32;
+	y = 32;
+	ft_xpm_img(data);
+	if ( == '1')
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, &size, &size);
+	else if ( == '0')
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, &size, &size);
+	else if ( == 'C')
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, &size, &size);
+	else if ( == 'E')
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.exit, &size, &size);
+	else if ( == 'P')
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.main, &size, &size);
+}
+
+void	ft_xpm_img(t_game *data)
+{
+	data->map.coin = mlx_xpm_file_to_image(data->mlx, "./art/heart", &data->w, &data->h);
+	data->map.exit = mlx_xpm_file_to_image(data->mlx, "./art/brain", &data->w, &data->h);
+	data->map.wall = mlx_xpm_file_to_image(data->mlx, "./art/skull", &data->w, &data->h);
+	data->map.floor = mlx_xpm_file_to_image(data->mlx, "./art/", &data->w, &data->h);
+	data->map.main = mlx_xpm_file_to_image(data->mlx, "./art/brain", &data->w, &data->h);
+	if (!data->map.coin || !data->map.exit || !data->map.wall || !data->map.floor || !data->map.main)
+		ft_error("No access to a xpm file");
+}
