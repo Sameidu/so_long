@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/28 12:01:19 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/28 12:38:26 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ typedef struct s_data
 void	ft_check_file(t_game *data, char *map);
 void	ft_error(char *str);
 int		ft_ext(char *map);
+void	ft_put_img(t_game *data);
+void	ft_xpm_img(t_game *data);
 
 #endif
