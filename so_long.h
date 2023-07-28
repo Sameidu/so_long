@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/28 12:38:26 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/28 12:51:59 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_data
 	void	*mlx_img;
 	int		w;
 	int		h;
+	int		key;
 	t_map	map;	
 }			t_game;
 
