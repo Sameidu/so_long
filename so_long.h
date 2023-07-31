@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/28 12:51:59 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/31 09:35:44 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	ft_error(char *str);
 int		ft_ext(char *map);
 void	ft_put_img(t_game *data);
 void	ft_xpm_img(t_game *data);
+int		ft_read_key(t_game *data);
 
 #endif
