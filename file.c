@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/28 12:42:01 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:00:25 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@ int	ft_ext(char *map)
 
 void	ft_check_file(t_game *data, char *map)
 {
-	int fd;
+	int 	fd;
+	int		i;
+	char	*line;
 
+	i = 0;
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
-	{
 		ft_error("ERROR\nProblems reading the file");
-	}
-	data->map.chart = get_next_line(fd);
+	line = get_next_line(fd);
+	if (!line)
+		ft_error("Problems reading fd");
+	data->map.chart[i] = line;
 	close(fd);
 }

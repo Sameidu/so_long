@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:14:48 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/28 12:51:33 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:01:35 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	}
 	data.mlx = mlx_init();
 	ft_initialize(&data, argv[1]); //Para cargar e inicilializar el mapa con las imágenes haciedno las comprobaciones necesarias
-	mlx_key_hook(data.mlx_win, ft_read_key(&data), &data);
+	//mlx_key_hook(data.mlx_win, ft_read_key(&data), &data);
 	mlx_loop(data.mlx);
 	return (0);
 }
