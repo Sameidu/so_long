@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   mlx_destroy_display.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/25 19:15:25 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/31 14:32:38 by smeixoei         ###   ########.fr       */
+/*   Created: 2020/10/03 18:56:35 by mg                #+#    #+#             */
+/*   Updated: 2020/10/04 01:55:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "mlx_int.h"
 
-void	ft_error(char *str)
+int	mlx_destroy_display(t_xvar *xvar)
 {
-	ft_putstr_fd(str, 2);
-	exit (0);
-}
-void	ft_kill_game(t_game *data)
-{
-	mlx_destroy_window(data->mlx, data->mlx_win);
-	exit (0);
+	XCloseDisplay(xvar->display);
 }
