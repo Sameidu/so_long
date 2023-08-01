@@ -14,6 +14,9 @@
 
 void	ft_put_img(t_game *data)
 {
+	int	size;
+
+	size = SIZE;
 	ft_xpm_img(data);
 	if ( == '1')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, &size, &size);
