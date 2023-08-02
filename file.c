@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/01 12:34:54 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:56:53 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_check_file(t_game *data, char *map)
 	while (line)
 	{
 		line = get_next_line(fd);
+		
 		data->map.y++;
 	}
 	close(fd);
