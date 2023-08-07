@@ -2,7 +2,7 @@
 
  NAME		=	so_long
  CC			=	gcc
- FLAGS		=	-Wall -Wextra -Werror -Imlx #-g3 -fsanitize=address
+ FLAGS		=	-Wall -Wextra -Werror -Imlx -g3 -fsanitize=address
  MLX		=	mlx/minilibx-linux/Makefile.gen
  LFT		=	libft/libft.a
  INC		=	-I ./inc -I ./libft -I ./minilibx

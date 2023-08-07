@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:14:48 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/07/31 19:01:35 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/03 15:55:07 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_initialize(t_game *data, char *map)
 	ft_check_file(data, map);
 	//ft_check_map(data);
 	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");
-	ft_put_img(data);
+	//ft_put_img(data);
 	//Cargar imágenes en ventana
 }
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 {
 	t_game	data;
 
-	if (argc != 2 || !ft_ext(argv[1]))
+	if (argc != 2 || ft_ext(argv[1]))
 	{
 		ft_putstr_fd("ERROR\nInvalid arguments\n", 1);
 		return (0);
