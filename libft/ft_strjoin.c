@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:19:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/07 17:14:36 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/08 17:49:30 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	else if (s1 == NULL)
-		return (s2);
+		return ((char *)s2);
 	else if (s2 == NULL)
-		return (s1);
+		return ((char *)s1);
 	printf("%s\n", ":c");
 	aux_s1 = (char *)s1;
 	aux_s2 = (char *)s2;
