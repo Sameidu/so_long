@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/07 16:01:30 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:40:43 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_map
 	int		x;
 	int		y;
 	char	**chart;
+	char	**cp_chart;
 }			t_map;
 
 typedef struct s_data
