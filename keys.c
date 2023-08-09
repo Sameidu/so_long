@@ -33,20 +33,20 @@ int	ft_read_key(t_game *data)
 
 void	ft_up(t_game *data)
 {
-
+	// Sería hacer un data->map.y - 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
 }
 
 void	ft_down(t_game *data)
 {
-	
+	// Sería hacer un data->map.y + 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
 }
 
 void	ft_left(t_game *data)
 {
-	
+	// Sería hacer un data->map.x + 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
 }
 
 void	ft_right(t_game *data)
 {
-	
+	// Sería hacer un data->map.x - 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
 }
