@@ -12,3 +12,7 @@
 
 #include "so_long.h"
 
+void	ft_check_map(t_game *data)
+{
+	
+}

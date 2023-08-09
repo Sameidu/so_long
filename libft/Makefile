@@ -6,7 +6,7 @@
 #    By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 16:43:22 by smeixoei          #+#    #+#              #
-#    Updated: 2023/07/26 16:01:43 by smeixoei         ###   ########.fr        #
+#    Updated: 2023/08/09 10:17:12 by smeixoei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,19 +53,7 @@ SRCS_MAIN = ft_isdigit.c\
 			get_next_line.c\
 			get_next_line_utils.c\
 
-SRCS_BONUS = ft_lstnew_bonus.c\
-				ft_lstadd_front_bonus.c\
-				ft_lstsize_bonus.c\
-				ft_lstlast_bonus.c\
-				ft_lstadd_back_bonus.c\
-				ft_lstdelone_bonus.c\
-				ft_lstclear_bonus.c\
-				ft_lstiter_bonus.c\
-				ft_lstmap_bonus.c\
-
 OBJS_MAIN = $(SRCS_MAIN:.c=.o)
-
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 RM = rm -f
 
@@ -77,9 +65,6 @@ all: $(NAME)
 $(NAME): $(OBJS_MAIN) $(INCLUDES)
 		$(LIB) $(NAME) $(OBJS_MAIN)
 
-bonus: $(OBJS_BONUS)
-	$(LIB) $(NAME) $(OBJS_BONUS)
-
 clean:
 	$(RM) $(OBJS_MAIN) $(OBJS_BONUS)
 
@@ -88,4 +73,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean res
