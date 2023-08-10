@@ -21,6 +21,8 @@ void	ft_check_map(t_game *data)
 	// Comprobar que haya sólo un personaje (P)
 	// Comprobar que haya al menos un coleccionable (C)
 	// ft_check_exit_and_character(data); (Posiblemente se pueda hacer dentro de esta función por ser poca comprobación)
+	if (data->map.exit != 1 || data->map.main != 1 || data->map.coin < 1)
+		ft_error("ERROR\n INVALID MAP");
 	// Comprobar que el personaje se pueda mover por el mapa (0) (Con flood fill crearemos esto en "utils.c")
 	// Comprpobar que la salida sea accesible para el personaje	(Con flood fill crearemos esto en "utils.c")
 	// ft_check_move(data); (Con flood fill crearemos esto en "utils.c")
