@@ -24,6 +24,10 @@ void	ft_check_walls(t_game *data)
 	i = 0;
 	while (i < data->map.x && data->map.chart[j][i] == '1')
 		i++;
+	j = 1;
+	i = data->map.x;
+	while (data->map.chart[j][0] == '1' && data->map.chart[j][i] == '1')
+		j++;
 }
 
 void	ft_check_map(t_game *data)
