@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/16 09:25:43 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/16 11:57:30 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_exit(t_game *data, int x, int y)
 	return (0);
 }
 
-int    ft_flood_fill(t_game *data)
+int    ft_check_move(t_game *data)
 {
     int	x;
 	int	y;

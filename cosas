@@ -1,0 +1,17 @@
+Me queda por hacer una relectura del mapa e ir colocando las imágenes cuando encuentre el caracter asociado a cada una. La duda que me surge es si debo imprimir (Imagino que sí) siempre el sprite que corresponce al suelo o lo puedo hacer de una forma más óptima.
+
+Por otro lado también debo de mover al personaje por la matriz teniendo en ceunta que al pasar por cualquier sitio debe cambiar la imágen de este y si recoge algún coleccionable debe desaparecer esta.
+
+Me surge otra duda con esto y es si puedo almacenar en una nueva variable de tipo int para los coleccionables en la función que tengo para contabilizar el número de personaje, salida y coleccionables sea válido y no sé si al ejecutar la función que te permita terminar el juego por la salida poner la condición de que el numero de una variable auxiliar en la misma deba ser igual al almacenado anteriormente.
+
+Siguiente duda es dónde colocar el que se abra la pantalla y dónde llamar a la función encargada de dibujar el mapa en esta, debe ser antes o despues? O es totalmente indiferente?
+
+Otra duda que siguo sin tener del todo resuelta es si puedo atravesar la salida (Que cuente como un cacho normal de suelo) mientras no haya recogido los coleccionables (En este caso puede ser lógico y creo que me ahorraría alguna comprobación ya que hay varios juegos en los que es posible y en otros no).
+
+Tengo que rehacer el Flood Fill ya que es copia de Christian para ver si funciona, quiero ser capaz de entenderlo y realizarlo yo (Aunque, siendo sinceros, sólo no entiendo una de las cosas que se hace en el archivo y me parece una idea y un código muy fácil de leer, por lo que me gutaría encontrar una manera parecida de comprenderlo y que la copia no sea tan descarada).
+
+Veo a la gente muy metida en que el mapa debe ser cuadrado... No termino de entender ya que si no hay 1 tanto en la posición 0 como en la final de la línea de la matriz ha de dar error y finalizar el programa... Algo rectangular puede ser tanto a lo largo como a lo alto... 
+
+!!!!!!!!!!!!!!!!RECUERDA!!!!!!!!!!!!!!!!
+
+Pregunta a algún compañero más a parte de a Christian por ver otros puntos de vista y posibles errores que todavía no he gestionado porque no me haya dado cuenta de ellos.
