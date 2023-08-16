@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/14 12:04:50 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/16 09:25:43 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_check_coin(t_game *data)
 		x = 0;
 		while (x < data->map.x)
 		{
-			if ( data->map.cp_chart[y][x] == 'C')
+			if (data->map.cp_chart[y][x] == 'C')
 				ft_error("ERROR\nINVALID MAP");
 			x++;
 		}
