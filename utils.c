@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/16 11:57:30 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:39:05 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,8 @@ int	ft_exit(t_game *data, int x, int y)
 	return (0);
 }
 
-int    ft_check_move(t_game *data)
+int    ft_check_move(t_game *data, int x, int y)
 {
-    int	x;
-	int	y;
-
 	y = 0;
 	while (y < data->map.y)
 	{

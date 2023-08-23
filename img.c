@@ -12,21 +12,21 @@
 
 #include "so_long.h"
 
-void	ft_put_img(t_game *data)
+void	ft_put_img(t_game *data, char value)
 {
 	int	size;
 
 	size = SIZE;
 	ft_xpm_img(data);
-	if ( == '1')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, &size, &size);
-	else if ( == '0')
+	if (value == '0')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, &size, &size);
-	else if ( == 'C')
+	else if (value == '1')
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, &size, &size);
+	else if (value == 'C')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, &size, &size);
-	else if ( == 'E')
+	else if (value == 'E')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.exit, &size, &size);
-	else if ( == 'P')
+	else if (value == 'P')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.main, &size, &size);
 }
 

@@ -68,6 +68,21 @@ void	ft_elements(t_game *data, int x, int y)
 		ft_error("ERROR\nINVALID MAP");
 }
 
+void	ft_print_map(t_game *data, int x, int y)
+{
+	y = 0;
+	while (y < data->map.y)
+	{
+		x = 0;
+		while (x < data->map.x)
+		{
+			ft_put_img(data, data->map.chart[y][x]);
+			x++;
+		}
+		y++;
+	}
+}
+
 void	ft_check_map(t_game *data)
 {
 	int	x;
@@ -82,10 +97,11 @@ void	ft_check_map(t_game *data)
 	ft_elements(data, x, y);
 	// Comprobar que el personaje se pueda mover por el mapa (0) (Con flood fill crearemos esto en "utils.c")
 	// Comprpobar que la salida sea accesible para el personaje	(Con flood fill crearemos esto en "utils.c")
-	// ft_check_move(data); (Con flood fill crearemos esto en "utils.c")
+	ft_check_move(data, x, y);
 	// Comprobar que el colleccionable sea accesible para el personaje
 	// ft_check_coin(data); (Con flood fill crearemos esto en "utils.c"
 	// Posiblemente todas las comprobaciones se puedan realizar en el archivo de utils
+	ft_print_map(data, x, y);
 }
 
 // Tengo que tener en cuenta que el personaje tampoco puede atravesar la salida y se contabiliza como pared hasta que recoja todos los coleccionables. acordarme de sólo convertir los 0 y C en P para ello.
