@@ -3,17 +3,21 @@
  NAME		=	so_long
  CC			=	gcc
  FLAGS		=	-Wall -Wextra -Werror -Imlx -g3 -fsanitize=address
- MLX		=	mlx/minilibx-linux/Makefile.gen
+ MLX		=	minilibx_linux/Makefile.gen
  LFT		=	libft/libft.a
- INC		=	-I ./inc -I ./libft -I ./minilibx
+ INC		=	-I ./inc -I ./libft -I ./minilibx_linux
  LIB		=	-L ./libft -lft -L ./minilibx_linux -lmlx -lXext -lX11 -lm #-lbsd
  OBJ		=	$(patsubst src%, obj%, $(SRC:.c=.o))
  SRC		=	so_long.c\
 				error.c\
 				file.c\
+				img.c\
+				keys.c\
+				map.c\
+				utils.c\
 				
 
- all:		$(MLX) $(LFT) obj $(NAME)
+ all:		$(MLX) $(LFT) $(NAME)
 
  $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -o $@ $^ $(LIB)
@@ -27,12 +31,6 @@
 	@echo " [ .. ] | Compiling libft.."
 	@make -s -C libft
 	@echo " [ OK ] | Libft ready!"
-
- obj:
-	@mkdir -p obj
-
- obj/%.o:	src/%.c
-	$(CC) $(FLAGS) $(INC) -o $@ -c $<
 
  clean:
 	@make -s $@ -C libft

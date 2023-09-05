@@ -14,22 +14,66 @@
 
 void	ft_up(t_game *data)
 {
-	// Sería hacer un data->map.y - 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
+    int x;
+    int y;
+
+	y = data->map.p_y - 1;
+	x = data->map.p_x;
+    if (y >= 0 && data->map.chart[y][x] != '1')
+    {
+        data->map.chart[data->map.p_y][data->map.p_x] = '0';
+        data->map.p_x = x;
+        data->map.p_y = y;
+        data->map.chart[data->map.p_y][data->map.p_x] = 'P';
+    }
 }
 
 void	ft_down(t_game *data)
 {
-	// Sería hacer un data->map.y + 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
+    int x;
+    int y;
+
+	y = data->map.p_y + 1;
+	x = data->map.p_x;
+    if (y >= 0 && data->map.chart[y][x] != '1')
+    {
+        data->map.chart[data->map.p_y][data->map.p_x] = '0';
+        data->map.p_x = x;
+        data->map.p_y = y;
+        data->map.chart[data->map.p_y][data->map.p_x] = 'P';
+    }
 }
 
 void	ft_left(t_game *data)
 {
-	// Sería hacer un data->map.x + 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
+    int x;
+    int y;
+
+	y = data->map.p_y;
+	x = data->map.p_x - 1;
+    if (x >= 0 && data->map.chart[y][x] != '1')
+    {
+        data->map.chart[data->map.p_y][data->map.p_x] = '0';
+        data->map.p_x = x;
+        data->map.p_y = y;
+        data->map.chart[data->map.p_y][data->map.p_x] = 'P';
+    }
 }
 
 void	ft_right(t_game *data)
 {
-	// Sería hacer un data->map.x - 1 (No sé si sería necesario alamacenar el largo en un auxiliar constate)
+    int x;
+    int y;
+
+	y = data->map.p_y;
+	x = data->map.p_x + 1;
+    if (x >= 0 && data->map.chart[y][x] != '1')
+    {
+        data->map.chart[data->map.p_y][data->map.p_x] = '0';
+        data->map.p_x = x;
+        data->map.p_y = y;
+        data->map.chart[data->map.p_y][data->map.p_x] = 'P';
+    }
 }
 
 int	ft_read_key(t_game *data)

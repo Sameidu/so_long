@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/14 12:05:13 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:58:37 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_check_file(t_game *data, char *map)
 		ft_error("ERROR\nProblems reading fd");
 	data->map.y = 0;
 	data->map.x = ft_strlen(line) - 1;
+	read = NULL;
 	while (line)
 	{
 		read = ft_strjoin(read, line);

@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:19:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/08 17:49:30 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:57:57 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	printf("%s\n", ":c");
 	aux_s1 = (char *)s1;
 	aux_s2 = (char *)s2;
-	src = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	src = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!src)
 		return (NULL);
 	return (ft_loop(aux_s1, aux_s2, src));

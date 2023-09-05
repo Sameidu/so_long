@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/23 10:24:28 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:22:57 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_map
 	void	*wall;
 	int		x;
 	int		y;
+	int		p_x;
+	int		p_y;
 	char	**chart;
 	char	**cp_chart;
 }			t_map;
@@ -54,5 +56,7 @@ int		ft_ext(char *map);
 void	ft_put_img(t_game *data, char value);
 void	ft_xpm_img(t_game *data);
 int		ft_read_key(t_game *data);
+void	ft_check_map(t_game *data);
+int    ft_check_move(t_game *data, int x, int y);
 
 #endif
