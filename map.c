@@ -90,6 +90,8 @@ void	ft_check_map(t_game *data)
 	int	x;
 	int	y;
 
+	x = 0;
+	y = 0;
 	ft_check_walls(data, x, y);
 	ft_elements(data, x, y);
 	ft_check_move(data, x, y);
