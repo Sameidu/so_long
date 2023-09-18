@@ -64,7 +64,7 @@ SRC			=	so_long.c\
 				img.c\
 				keys.c\
 				map.c\
-				utild.c\
+				utils.c\
 
 				
 
