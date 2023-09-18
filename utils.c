@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/08/23 10:39:05 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:37:56 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_route_map(t_game *data, int x, int y)
 {
 	if (data->map.cp_chart[y][x] == 'C' || data->map.cp_chart[y][x] == '0')
-		data->map.cp_chart[y][x] == 'P';
+		data->map.cp_chart[y][x] = 'P';
 }
 
 int	ft_route(t_game *data)

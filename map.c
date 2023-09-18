@@ -15,7 +15,7 @@
 void	ft_check_walls(t_game *data, int x, int y)
 {
 	x = 0;
-	y = data->map.y;
+	y = (data->map.y - 1);
 	while (x < data->map.x)
 	{
 		if (data->map.chart[0][x] != '1')
@@ -30,7 +30,7 @@ void	ft_check_walls(t_game *data, int x, int y)
 		x++;
 	}
 	y = 1;
-	x = data->map.x;
+	x = (data->map.x - 1);
 	while (y < data->map.y)
 	{
 		if (data->map.chart[y][0] != '1' || data->map.chart[y][x] != '1')
