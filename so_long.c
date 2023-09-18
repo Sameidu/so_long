@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:14:48 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/05 20:14:20 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:10:04 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	}
 	data.mlx = mlx_init();
 	ft_initialize(&data, argv[1]);
-	mlx_key_hook(data.mlx_win, ft_read_key(&data), &data);
+	mlx_key_hook(data.mlx_win, ft_read_key, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }
