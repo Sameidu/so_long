@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/18 16:16:12 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:12:53 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ void	ft_put_img(t_game *data, char value);
 void	ft_xpm_img(t_game *data);
 int		ft_read_key(t_game *data);
 void	ft_check_map(t_game *data);
-int		ft_check_move(t_game *data, int x, int y);
+int		ft_check_move(t_game *data);
 
 #endif

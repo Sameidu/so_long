@@ -49,7 +49,7 @@ void	ft_elements(t_game *data, int x, int y)
 	p = 0;
 	e = 0;
 	y = 0;
-	while (y < data->map.y)
+	while (y < data->map.y - 1)
 	{
 		x = 0;
 		while (x < data->map.x)
@@ -94,6 +94,7 @@ void	ft_check_map(t_game *data)
 	y = 0;
 	ft_check_walls(data, x, y);
 	ft_elements(data, x, y);
-	ft_check_move(data, x, y);
+	ft_check_move(data);
+	// no he guardado el valor de los archivos xpm en la variable de la estructra por lo que no puuede imprrimirlos
 	ft_print_map(data, x, y);
 }

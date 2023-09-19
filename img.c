@@ -32,19 +32,19 @@ void	ft_put_img(t_game *data, char value)
 
 void	ft_xpm_img(t_game *data)
 {
-	data->map.coin = mlx_xpm_file_to_image(data->mlx, "./art/heart", &data->w, &data->h);
+	data->map.coin = mlx_xpm_file_to_image(data->mlx, "./art/heart.xpm", &data->w, &data->h);
 	if (!data->map.coin)
 		ft_error("No access to a xpm file");
-	data->map.exit = mlx_xpm_file_to_image(data->mlx, "./art/brain", &data->w, &data->h);
+	data->map.exit = mlx_xpm_file_to_image(data->mlx, "./art/brain.xpm", &data->w, &data->h);
 	if (!data->map.exit)
 		ft_error("No access to a xpm file");
-	data->map.wall = mlx_xpm_file_to_image(data->mlx, "./art/skull", &data->w, &data->h);
+	data->map.wall = mlx_xpm_file_to_image(data->mlx, "./art/skull.xpm", &data->w, &data->h);
 	if (!data->map.wall)
 		ft_error("No access to a xpm file");
 	data->map.floor = mlx_xpm_file_to_image(data->mlx, "./art/", &data->w, &data->h);
 	if (!data->map.floor)
 		ft_error("No access to a xpm file");
-	data->map.main = mlx_xpm_file_to_image(data->mlx, "./art/brain", &data->w, &data->h);
+	data->map.main = mlx_xpm_file_to_image(data->mlx, "./art/brain.xpm", &data->w, &data->h);
 	if (!data->map.main)
 		ft_error("No access to a xpm file");
 }

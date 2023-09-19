@@ -6,19 +6,19 @@
 /*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/18 17:37:56 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:20:59 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-void	ft_route_map(t_game *data, int x, int y)
+static void	ft_route_map(t_game *data, int x, int y)
 {
 	if (data->map.cp_chart[y][x] == 'C' || data->map.cp_chart[y][x] == '0')
-		data->map.cp_chart[y][x] = 'P';
+		data->map.cp_chart[y][x] = ' ';
 }
 
-int	ft_route(t_game *data)
+static int	ft_exit(t_game *data)
 {
 	int	y;
 	int	x;
@@ -42,7 +42,7 @@ int	ft_route(t_game *data)
 	return (0);
 }
 
-int	ft_check_coin(t_game *data)
+static int	ft_check_coin(t_game *data)
 {
 	int	x;
 	int	y;
@@ -62,7 +62,7 @@ int	ft_check_coin(t_game *data)
 	return (1);
 }
 
-int	ft_exit(t_game *data, int x, int y)
+static int	ft_route(t_game *data, int x, int y)
 {
 	if (data->map.cp_chart[y][x] == 'P' &&
 		(data->map.cp_chart[y][x + 1] == '0'
@@ -77,15 +77,24 @@ int	ft_exit(t_game *data, int x, int y)
 	return (0);
 }
 
-int    ft_check_move(t_game *data, int x, int y)
+int    ft_check_move(t_game *data)
 {
+	int	y;
+	int	x;
+
 	y = 0;
 	while (y < data->map.y)
 	{
 		x = 0;
 		while (x < data->map.x)
 		{
-			if (ft_exit(data, x, y))
+			int c = 0;
+			while (data->map.chart[c])
+			{
+				printf("%s\n", data->map.cp_chart[c++]);
+			}
+			printf("\n");
+			if (ft_route(data, x, y))
 				{
 					ft_route_map(data, y + 1, x);
 					ft_route_map(data, y - 1, x);
@@ -95,10 +104,14 @@ int    ft_check_move(t_game *data, int x, int y)
 				}
 				x++;
 		}
+		// printf("%s\n", "aqui");
 		y++;
 	}
 	ft_check_coin(data);
-	if (ft_route(data))
+	if (ft_exit(data))
+	{
+		printf("%s\n", "aqui");
 		return (1);
+	}
 	return (0);
 }
