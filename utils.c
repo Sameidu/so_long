@@ -6,16 +6,19 @@
 /*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/19 18:20:59 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:17:35 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-static void	ft_route_map(t_game *data, int x, int y)
+static void	ft_route_map(t_game *data, int y, int x)
 {
-	if (data->map.cp_chart[y][x] == 'C' || data->map.cp_chart[y][x] == '0')
-		data->map.cp_chart[y][x] = ' ';
+	//printf("%s x[%i], y[%i]-> %c\n", "aqui bb estoy perrote, entra por cojones", x, y, data->map.chart[x][y]);
+	if (data->map.cp_chart[y][x] == 'C' || data->map.cp_chart[y][x] == '0'){
+	//	printf("%s\n", "aqui bb estoy perrote, entra por cojones, me haces daño");
+		data->map.cp_chart[y][x] = 'P';
+	}
 }
 
 static int	ft_exit(t_game *data)
@@ -62,8 +65,14 @@ static int	ft_check_coin(t_game *data)
 	return (1);
 }
 
-static int	ft_route(t_game *data, int x, int y)
+static int	ft_route(t_game *data, int y, int x)
 {
+	static int i = 0;
+	i++;
+	printf("iter -> %i\n", i);
+	
+	if(data->map.cp_chart[y][x] == 'P')
+			printf("%s\n", "aqui bb estoy perrote");
 	if (data->map.cp_chart[y][x] == 'P' &&
 		(data->map.cp_chart[y][x + 1] == '0'
 		|| data->map.cp_chart[y][x + 1] == 'C'
@@ -73,7 +82,10 @@ static int	ft_route(t_game *data, int x, int y)
 		|| data->map.cp_chart[y + 1][x] == 'C'
 		|| data->map.cp_chart[y - 1][x] == '0'
 		|| data->map.cp_chart[y - 1][x] == 'C'))
-		return (1);
+		{
+			printf("%s\n", "aqui bb");
+			return (1);
+		}
 	return (0);
 }
 
@@ -94,17 +106,19 @@ int    ft_check_move(t_game *data)
 				printf("%s\n", data->map.cp_chart[c++]);
 			}
 			printf("\n");
-			if (ft_route(data, x, y))
+			if (ft_route(data, y, x))
 				{
 					ft_route_map(data, y + 1, x);
 					ft_route_map(data, y - 1, x);
 					ft_route_map(data, y, x + 1);
 					ft_route_map(data, y, x - 1);
-					y = 0;
+					x = 0;
+					printf("%s\n", "aqui");
 				}
 				x++;
+			//fprintf(stderr, "x\n");
 		}
-		// printf("%s\n", "aqui");
+		fprintf(stderr, "y = %i\n", y);
 		y++;
 	}
 	ft_check_coin(data);
