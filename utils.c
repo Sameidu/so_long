@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/19 20:17:35 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/20 09:07:24 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,23 +89,14 @@ static int	ft_route(t_game *data, int y, int x)
 	return (0);
 }
 
-int    ft_check_move(t_game *data)
+int    ft_check_move(t_game *data, int y, int x)
 {
-	int	y;
-	int	x;
-
 	y = 0;
 	while (y < data->map.y)
 	{
 		x = 0;
 		while (x < data->map.x)
 		{
-			int c = 0;
-			while (data->map.chart[c])
-			{
-				printf("%s\n", data->map.cp_chart[c++]);
-			}
-			printf("\n");
 			if (ft_route(data, y, x))
 				{
 					ft_route_map(data, y + 1, x);
@@ -113,18 +104,14 @@ int    ft_check_move(t_game *data)
 					ft_route_map(data, y, x + 1);
 					ft_route_map(data, y, x - 1);
 					x = 0;
-					printf("%s\n", "aqui");
 				}
 				x++;
-			//fprintf(stderr, "x\n");
 		}
-		fprintf(stderr, "y = %i\n", y);
 		y++;
 	}
 	ft_check_coin(data);
 	if (ft_exit(data))
 	{
-		printf("%s\n", "aqui");
 		return (1);
 	}
 	return (0);

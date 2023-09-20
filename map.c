@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	ft_check_walls(t_game *data, int x, int y)
+void	ft_check_walls(t_game *data, int y, int x)
 {
 	x = 0;
 	y = (data->map.y - 1);
@@ -39,7 +39,7 @@ void	ft_check_walls(t_game *data, int x, int y)
 	}
 }
 
-void	ft_elements(t_game *data, int x, int y)
+void	ft_elements(t_game *data, int y, int x)
 {
 	int	c;
 	int	p;
@@ -70,7 +70,7 @@ void	ft_elements(t_game *data, int x, int y)
 		ft_error("ERROR\nINVALID MAP");
 }
 
-void	ft_print_map(t_game *data, int x, int y)
+void	ft_print_map(t_game *data, int y, int x)
 {
 	y = 0;
 	while (y < data->map.y)
@@ -92,9 +92,9 @@ void	ft_check_map(t_game *data)
 
 	x = 0;
 	y = 0;
-	ft_check_walls(data, x, y);
-	ft_elements(data, x, y);
-	ft_check_move(data);
+	ft_check_walls(data, y, x);
+	ft_elements(data, y, x);
+	ft_check_move(data, y, x);
 	// no he guardado el valor de los archivos xpm en la variable de la estructra por lo que no puuede imprrimirlos
-	ft_print_map(data, x, y);
+	ft_print_map(data, y, x);
 }
