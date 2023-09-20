@@ -56,7 +56,7 @@ CFLAGS		=	-Wall -Wextra -Werror # -Imlx
 MLX			=	./minilibx-mac/Makefile.gen
 LFT			=	libft/libft.a
 INC			=	-I ./inc -I ./libft #-I ./minilibx_opengl_20191021
-LIB			=	-L ./libft -lft -lmlx -framework OpenGL -framework AppKit  -g3 -fsanitize=address#-lbsd 
+LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit  -g3 -fsanitize=address#-lbsd 
 OBJ			=	$(SRC:.c=.o)
 SRC			=	so_long.c\
 				error.c\

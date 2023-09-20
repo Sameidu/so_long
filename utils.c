@@ -70,7 +70,11 @@ static int	ft_route(t_game *data, int y, int x)
 	static int i = 0;
 	i++;
 	printf("iter -> %i\n", i);
-	
+	int c = 0;
+	while (data->map.chart[c])
+	{
+		printf("%s\n", data->map.cp_chart[c++]);
+	}
 	if(data->map.cp_chart[y][x] == 'P')
 			printf("%s\n", "aqui bb estoy perrote");
 	if (data->map.cp_chart[y][x] == 'P' &&
@@ -103,7 +107,7 @@ int    ft_check_move(t_game *data, int y, int x)
 					ft_route_map(data, y - 1, x);
 					ft_route_map(data, y, x + 1);
 					ft_route_map(data, y, x - 1);
-					x = 0;
+					y = 0;
 				}
 				x++;
 		}
