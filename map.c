@@ -78,7 +78,7 @@ void	ft_print_map(t_game *data, int y, int x)
 		x = 0;
 		while (x < data->map.x)
 		{
-			ft_put_img(data, data->map.chart[y][x]);
+			ft_put_img(data, data->map.chart[y][x], y, x);
 			x++;
 		}
 		y++;

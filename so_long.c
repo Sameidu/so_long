@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:14:48 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/21 18:10:00 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/21 19:55:49 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_initialize(t_game *data, char *map)
 {
 	ft_check_file(data, map);
-	data->w = data->map.x * 64;
-	data->h = data->map.y * 64;
+	data->w = data->map.x * SIZE;
+	data->h = data->map.y * SIZE;
 	printf("%d\n", data->w);
 	printf("%d\n", data->h);
-	data->mlx_win = mlx_new_window(data->mlx, 128, 128, "so_long");
+	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");
 	ft_xpm_img(data);
 	ft_check_map(data);
 }
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	}
 	data.mlx = mlx_init();
 	ft_initialize(&data, argv[1]);
-	//mlx_key_hook(data.mlx_win, ft_read_key, &data);
+	mlx_key_hook(data.mlx_win, ft_read_key, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }

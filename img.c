@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	ft_put_img(t_game *data, char value)
+void	ft_put_img(t_game *data, char value, int y, int x)
 {
 	int	size;
 
@@ -21,13 +21,13 @@ void	ft_put_img(t_game *data, char value)
 	// if (value == '0')
 	// 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, size, size);
 	if (value == '1')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, 0, 0);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, y * 32, x * 32);
 	else if (value == 'C')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, 32, 0);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, y * 32, x * 32);
 	else if (value == 'E')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.exit, 0, 32);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.exit, y * 32, x * 32);
 	else if (value == 'P')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.main, 32, 32);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.main, y * 32, x * 32);
 }
 
 void	ft_xpm_img(t_game *data)
