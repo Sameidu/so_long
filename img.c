@@ -18,9 +18,9 @@ void	ft_put_img(t_game *data, char value)
 
 	size = SIZE;
 	ft_xpm_img(data);
-	if (value == '0')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, size, size);
-	else if (value == '1')
+	// if (value == '0')
+	// 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, size, size);
+	if (value == '1')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, size, size);
 	else if (value == 'C')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, size, size);
@@ -39,9 +39,9 @@ void	ft_xpm_img(t_game *data)
 	if (!data->map.exit)
 		ft_error("No access to a xpm file");
 	data->map.wall = mlx_xpm_file_to_image(data->mlx, "./art/skull.xpm", &data->w, &data->h);
-	if (!data->map.wall)
-		ft_error("No access to a xpm file");
-	data->map.floor = mlx_xpm_file_to_image(data->mlx, "./art/", &data->w, &data->h);
+	// if (!data->map.wall)
+	// 	ft_error("No access to a xpm file");
+	// data->map.floor = mlx_xpm_file_to_image(data->mlx, "./art/", &data->w, &data->h);
 	if (!data->map.floor)
 		ft_error("No access to a xpm file");
 	data->map.main = mlx_xpm_file_to_image(data->mlx, "./art/brain.xpm", &data->w, &data->h);
