@@ -21,13 +21,13 @@ void	ft_put_img(t_game *data, char value, int y, int x)
 	// if (value == '0')
 	// 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, size, size);
 	if (value == '1')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, y * 32, x * 32);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, x * size, y * size);
 	else if (value == 'C')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, y * 32, x * 32);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, x * size, y * size);
 	else if (value == 'E')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.exit, y * 32, x * 32);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.exit, x * size, y * size);
 	else if (value == 'P')
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.main, y * 32, x * 32);
+		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.main, x * size, y * size);
 }
 
 void	ft_xpm_img(t_game *data)
