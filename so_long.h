@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/21 19:50:10 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:05:38 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_error(char *str);
 int		ft_ext(char *map);
 void	ft_put_img(t_game *data, char value, int y, int x);
 void	ft_xpm_img(t_game *data);
-int		ft_read_key(t_game *data);
+int		ft_read_key(int key, t_game *data);
 void	ft_check_map(t_game *data);
 int		ft_check_move(t_game *data, int y, int x);
 
