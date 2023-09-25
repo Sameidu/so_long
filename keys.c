@@ -78,6 +78,7 @@ void	ft_right(t_game *data)
 
 int	ft_read_key(int key, t_game *data)
 {
+    data->map.steps++;
 	if (key == 53)
 	{
 		mlx_destroy_window(data->mlx, data->mlx_win);

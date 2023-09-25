@@ -41,11 +41,9 @@ void	ft_check_walls(t_game *data, int y, int x)
 
 void	ft_elements(t_game *data, int y, int x)
 {
-	int	c;
 	int	p;
 	int	e;
 
-	c = 0;
 	p = 0;
 	e = 0;
 	y = 0;
@@ -55,18 +53,18 @@ void	ft_elements(t_game *data, int y, int x)
 		while (x < data->map.x)
 		{
 			if (data->map.cp_chart[y][x] == 'C')
-				c++;
+				data->map.count_coin++;
+			if (data->map.cp_chart[y][x] == 'E')
+				e++;
 			if (data->map.cp_chart[y][x] == 'P')
 				p++;
 				data->map.p_x = x;
 				data->map.p_y = y;
-			if (data->map.cp_chart[y][x] == 'E')
-				e++;
 			x++;
 		}
 		y++;
 	}
-	if (e != 1 || p != 1 || c < 1)
+	if (e != 1 || p != 1 || data->map.count_coin < 1)
 		ft_error("ERROR\nINVALID MAP");
 }
 
@@ -95,6 +93,5 @@ void	ft_check_map(t_game *data)
 	ft_check_walls(data, y, x);
 	ft_elements(data, y, x);
 	ft_check_move(data, y, x);
-	// no he guardado el valor de los archivos xpm en la variable de la estructra por lo que no puuede imprrimirlos
 	ft_print_map(data, y, x);
 }

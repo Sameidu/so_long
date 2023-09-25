@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/22 12:05:38 by smeixoei         ###   ########.fr       */
+/*   Updated: 2023/09/25 09:19:36 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_map
 	int		y;
 	int		p_x;
 	int		p_y;
+	int		count_coin;
+	int		steps;
 	char	**chart;
 	char	**cp_chart;
 }			t_map;
