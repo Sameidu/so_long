@@ -57,9 +57,11 @@ void	ft_elements(t_game *data, int y, int x)
 			if (data->map.cp_chart[y][x] == 'E')
 				e++;
 			if (data->map.cp_chart[y][x] == 'P')
+			{
 				p++;
 				data->map.p_x = x;
 				data->map.p_y = y;
+			}
 			x++;
 		}
 		y++;
