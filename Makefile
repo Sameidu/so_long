@@ -1,4 +1,4 @@
-##################        LINUX
+# #################        LINUX
 
 #  NAME		=	so_long
 #  CC			=	gcc
