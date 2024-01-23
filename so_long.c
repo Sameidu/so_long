@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sarameixoeiro <sarameixoeiro@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:14:48 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/25 13:54:11 by smeixoei         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:17:42 by sarameixoei      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_initialize(t_game *data, char *map)
 	ft_check_file(data, map);
 	data->w = data->map.x * SIZE;
 	data->h = data->map.y * SIZE;
-	printf("%d\n", data->w);
-	printf("%d\n", data->h);
 	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");
 	ft_xpm_img(data);
 	ft_check_map(data);
