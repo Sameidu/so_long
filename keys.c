@@ -26,9 +26,8 @@ void	ft_up(t_game *data)
 			data->map.count_coin--;
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
-			ft_putendl_fd("You win!\nSteps: ", 1);
+			ft_putstr_fd("You win!\nSteps: ", 1);
 			ft_putnbr_fd(data->map.steps, 1);
-			ft_putendl_fd("\n", 1);
 			ft_kill_game(data);
 		}
 		data->map.chart[data->map.p_y][data->map.p_x] = '0';
@@ -53,9 +52,8 @@ void	ft_down(t_game *data)
 			data->map.count_coin--;
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
-			ft_putendl_fd("You win!\nSteps: ", 1);
+			ft_putstr_fd("You win!\nSteps: ", 1);
 			ft_putnbr_fd(data->map.steps, 1);
-			ft_putendl_fd("\n", 1);
 			ft_kill_game(data);
 		}
 		data->map.chart[data->map.p_y][data->map.p_x] = '0';
@@ -80,9 +78,8 @@ void	ft_left(t_game *data)
 			data->map.count_coin--;
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
-			ft_putendl_fd("You win!\nSteps: ", 1);
+			ft_putstr_fd("You win!\nSteps: ", 1);
 			ft_putnbr_fd(data->map.steps, 1);
-			ft_putendl_fd("\n", 1);
 			ft_kill_game(data);
 		}
 		data->map.chart[data->map.p_y][data->map.p_x] = '0';
@@ -107,9 +104,8 @@ void	ft_right(t_game *data)
 			data->map.count_coin--;
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
-			ft_putendl_fd("You win!\nSteps: ", 1);
+			ft_putstr_fd("You win!\nSteps: ", 1);
 			ft_putnbr_fd(data->map.steps, 1);
-			ft_putendl_fd("\n", 1);
 			ft_kill_game(data);
 		}
 		data->map.chart[data->map.p_y][data->map.p_x] = '0';
@@ -135,5 +131,6 @@ int	ft_read_key(int key, t_game *data)
 		ft_right(data);
 	ft_putstr_fd("Steps: ", 1);
 	ft_putnbr_fd(data->map.steps, 1);
+	ft_putstr_fd("\n", 1);
 	return (0);
 }
