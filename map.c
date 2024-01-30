@@ -47,6 +47,7 @@ void	ft_elements(t_game *data, int y, int x)
 	p = 0;
 	e = 0;
 	y = 0;
+	data->map.count_coin = 0;
 	while (y < data->map.y - 1)
 	{
 		x = 0;

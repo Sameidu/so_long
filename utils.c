@@ -6,7 +6,7 @@
 /*   By: sarameixoeiro <sarameixoeiro@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/01/23 11:18:04 by sarameixoei      ###   ########.fr       */
+/*   Updated: 2024/01/30 10:11:35 by sarameixoei      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 static void	ft_route_map(t_game *data, int y, int x)
 {
-	//printf("%s x[%i], y[%i]-> %c\n", "aqui bb estoy perrote, entra por cojones", x, y, data->map.chart[x][y]);
-	if (data->map.cp_chart[y][x] == 'C' || data->map.cp_chart[y][x] == '0'){
-	//	printf("%s\n", "aqui bb estoy perrote, entra por cojones, me haces daño");
+	if (data->map.cp_chart[y][x] == 'C' || data->map.cp_chart[y][x] == '0')
 		data->map.cp_chart[y][x] = 'P';
-	}
 }
 
 static int	ft_exit(t_game *data)
@@ -67,16 +64,6 @@ static int	ft_check_coin(t_game *data)
 
 static int	ft_route(t_game *data, int y, int x)
 {
-	static int i = 0;
-	i++;
-	printf("iter -> %i\n", i);
-	int c = 0;
-	while (data->map.chart[c])
-	{
-		printf("%s\n", data->map.cp_chart[c++]);
-	}
-	if(data->map.cp_chart[y][x] == 'P')
-			printf("%s\n", "aqui bb estoy perrote");
 	if (data->map.cp_chart[y][x] == 'P' &&
 		(data->map.cp_chart[y][x + 1] == '0'
 		|| data->map.cp_chart[y][x + 1] == 'C'
@@ -86,10 +73,7 @@ static int	ft_route(t_game *data, int y, int x)
 		|| data->map.cp_chart[y + 1][x] == 'C'
 		|| data->map.cp_chart[y - 1][x] == '0'
 		|| data->map.cp_chart[y - 1][x] == 'C'))
-		{
-			printf("%s\n", "aqui bb");
 			return (1);
-		}
 	return (0);
 }
 
@@ -109,7 +93,7 @@ int    ft_check_move(t_game *data, int y, int x)
 					ft_route_map(data, y, x - 1);
 					y = 0;
 				}
-				x++;
+			x++;
 		}
 		y++;
 	}

@@ -6,7 +6,7 @@
 /*   By: sarameixoeiro <sarameixoeiro@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:14:48 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/01/23 11:17:42 by sarameixoei      ###   ########.fr       */
+/*   Updated: 2024/01/30 10:09:29 by sarameixoei      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int	main(int argc, char **argv)
 	}
 	data.mlx = mlx_init();
 	ft_initialize(&data, argv[1]);
+	data.map.steps = 1;
 	mlx_key_hook(data.mlx_win, ft_read_key, &data);
+	mlx_hook(data.mlx_win, 17, 0, ft_kill_game, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }

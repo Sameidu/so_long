@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sarameixoeiro <sarameixoeiro@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 19:15:25 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/01/29 17:34:51 by smeixoei         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:10:38 by sarameixoei      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_error(char *str)
 	exit (0);
 }
 
-void	ft_kill_game(t_game *data)
+int	ft_kill_game(t_game *data)
 {
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	exit (0);
