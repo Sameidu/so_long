@@ -52,11 +52,11 @@
 
 NAME		=	so_long
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror # -Imlx
+CFLAGS		=	-Wall -Wextra -Werror
 MLX			=	./minilibx-mac/Makefile.gen
 LFT			=	libft/libft.a
-INC			=	-I ./inc -I ./libft #-I ./minilibx_opengl_20191021
-LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit  -g3 -fsanitize=address#-lbsd 
+INC			=	-I ./inc -I ./libft
+LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit
 OBJ			=	$(SRC:.c=.o)
 SRC			=	so_long.c\
 				error.c\
@@ -66,32 +66,40 @@ SRC			=	so_long.c\
 				map.c\
 				utils.c\
 
-				
+COLOUR_GREEN=\033[0;32m
+COLOUR_RED=\033[0;31m
+COLOUR_BLUE=\033[0;34m
+COLOUR_END=\033[0m
 
 all:		$(MLX) $(LFT) $(NAME)
+
 $(NAME):	$(OBJ)
-			$(CC) $(FLAGS) -o $@ $^ $(LIB)
+			@$(CC) $(FLAGS) -o $@ $^ $(LIB)
+			@echo "$(COLOUR_GREEN) [ OK ] | So Long ready! $(COLOUR_END)"
+
+$(OBJ): %.o: %.c
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(MLX):
-			@echo " [ .. ] | Compiling minilibx.."
+			echo "$(COLOUR_BLUE) [ ... ] | Compiling minilibx.. $(COLOUR_END)"
 			@make -s -C minilibx_mac
-			@echo " [ OK ] | Minilibx ready!"
+			@echo "$(COLOUR_GREEN) [ OK ] | Minilibx ready! $(COLOUR_END)"
 
 $(LFT):		
-			@echo " [ .. ] | Compiling libft.."
+			@echo "$(COLOUR_BLUE) [ ... ] | Compiling libft.. $(COLOUR_END)"
 			@make -s -C libft
-			@echo " [ OK ] | Libft ready!"
+			@echo "$(COLOUR_GREEN) [ OK ] | Libft ready! $(COLOUR_END)"
 
 clean:
 			@make -s $@ -C libft
 			@make -s $@ -C minilibx_mac
 			@rm -rf $(OBJ)
-			@echo "object files removed."
+			@echo "$(COLOUR_RED) [ X ] | Object files removed. $(COLOUR_END)"
 
 fclean:		clean
 			@make -s $@ -C libft
 			@rm -rf $(NAME)
-			@echo "binary file removed."
+			@echo "$(COLOUR_RED) [ X ] | Binary file removed. $(COLOUR_END)"
 
 re:			fclean all
 
