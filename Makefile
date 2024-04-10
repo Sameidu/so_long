@@ -9,7 +9,6 @@
 #  LIB		=	-L ./libft -lft -L ./minilibx_linux -lmlx -lXext -lX11 -lm #-lbsd
 #  OBJ		=	$(patsubst src%, obj%, $(SRC:.c=.o))
 #  SRC		=	so_long.c\
-# 				error.c\
 # 				file.c\
 # 				img.c\
 # 				keys.c\
@@ -59,7 +58,6 @@ INC			=	-I ./inc -I ./libft
 LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit
 OBJ			=	$(SRC:.c=.o)
 SRC			=	so_long.c\
-				error.c\
 				file.c\
 				img.c\
 				keys.c\

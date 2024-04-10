@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sarameixoeiro <sarameixoeiro@student.42    +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/01/30 10:10:56 by sarameixoei      ###   ########.fr       */
+/*   Updated: 2024/04/10 12:33:13 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_map
 	int		count_coin;
 	int		steps;
 	char	**chart;
-	char	**cp_chart;
 }			t_map;
 
 typedef struct s_data

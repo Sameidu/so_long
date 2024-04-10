@@ -17,14 +17,14 @@ void	ft_put_img(t_game *data, char value, int y, int x)
 	int	size;
 
 	size = SIZE;
-	if (value == '0')
+	if (value == 'O')
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, x * size, y * size);
 	if (value == '1')
 	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, x * size, y * size);
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.wall, x * size, y * size);
 	}
-	if (value == 'C')
+	if (value == 'K')
 	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.floor, x * size, y * size);
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->map.coin, x * size, y * size);

@@ -18,13 +18,13 @@ void	ft_up(t_game *data)
 	int	y;
 
 	y = ((x = data->map.p_x), data->map.p_y - 1);
-	if ((data->map.chart[y][x] == '0' || data->map.chart[y][x] == 'C'
+	if ((data->map.chart[y][x] == 'O' || data->map.chart[y][x] == 'K'
 		|| data->map.chart[y][x] == 'E') && data->map.chart[y][x] != '1')
 	{
-		if (data->map.chart[y][x] == 'C')
+		if (data->map.chart[y][x] == 'K')
 		{
 			data->map.count_coin--;
-			data->map.chart[data->map.p_y][data->map.p_x] = '0';
+			data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		}
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
@@ -32,7 +32,7 @@ void	ft_up(t_game *data)
 			ft_kill_game(data);
 		}
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
-            data->map.chart[data->map.p_y][data->map.p_x] = '0';
+            data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		data->map.p_y = ((data->map.p_x = x), y);
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
             data->map.chart[data->map.p_y][data->map.p_x] = 'P';
@@ -46,13 +46,13 @@ void	ft_down(t_game *data)
 	int	y;
 
 	y = ((x = data->map.p_x), data->map.p_y + 1);
-	if ((data->map.chart[y][x] == '0' || data->map.chart[y][x] == 'C'
+	if ((data->map.chart[y][x] == 'O' || data->map.chart[y][x] == 'K'
 		|| data->map.chart[y][x] == 'E') && data->map.chart[y][x] != '1')
 	{
-		if (data->map.chart[y][x] == 'C')
+		if (data->map.chart[y][x] == 'K')
 		{
 			data->map.count_coin--;
-			data->map.chart[data->map.p_y][data->map.p_x] = '0';
+			data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		}
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
@@ -60,7 +60,7 @@ void	ft_down(t_game *data)
 			ft_kill_game(data);
 		}
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
-            data->map.chart[data->map.p_y][data->map.p_x] = '0';
+            data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		data->map.p_y = ((data->map.p_x = x), y);
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
             data->map.chart[data->map.p_y][data->map.p_x] = 'P';
@@ -74,13 +74,13 @@ void	ft_left(t_game *data)
 	int	y;
 
 	y = ((x = data->map.p_x - 1), data->map.p_y);
-	if ((data->map.chart[y][x] == '0' || data->map.chart[y][x] == 'C'
+	if ((data->map.chart[y][x] == 'O' || data->map.chart[y][x] == 'K'
 		|| data->map.chart[y][x] == 'E') && data->map.chart[y][x] != '1')
 	{
-		if (data->map.chart[y][x] == 'C')
+		if (data->map.chart[y][x] == 'K')
 		{
 			data->map.count_coin--;
-			data->map.chart[data->map.p_y][data->map.p_x] = '0';
+			data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		}
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
@@ -88,7 +88,7 @@ void	ft_left(t_game *data)
 			ft_kill_game(data);
 		}
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
-            data->map.chart[data->map.p_y][data->map.p_x] = '0';
+            data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		data->map.p_x = ((data->map.p_y = y), x);
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
             data->map.chart[data->map.p_y][data->map.p_x] = 'P';
@@ -102,13 +102,13 @@ void	ft_right(t_game *data)
 	int	y;
 
 	y = ((x = data->map.p_x + 1), data->map.p_y);
-	if ((data->map.chart[y][x] == '0' || data->map.chart[y][x] == 'C'
+	if ((data->map.chart[y][x] == 'O' || data->map.chart[y][x] == 'K'
 		|| data->map.chart[y][x] == 'E') && data->map.chart[y][x] != '1')
 	{
-		if (data->map.chart[y][x] == 'C')
+		if (data->map.chart[y][x] == 'K')
 		{
 			data->map.count_coin--;
-			data->map.chart[data->map.p_y][data->map.p_x] = '0';
+			data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		}
 		if (data->map.chart[y][x] == 'E' && data->map.count_coin == 0)
 		{
@@ -116,7 +116,7 @@ void	ft_right(t_game *data)
 			ft_kill_game(data);
 		}
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
-            data->map.chart[data->map.p_y][data->map.p_x] = '0';
+            data->map.chart[data->map.p_y][data->map.p_x] = 'O';
 		data->map.p_x = ((data->map.p_y = y), x);
 		if (data->map.chart[data->map.p_y][data->map.p_x] != 'E')
             data->map.chart[data->map.p_y][data->map.p_x] = 'P';

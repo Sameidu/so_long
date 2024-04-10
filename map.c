@@ -53,11 +53,11 @@ void	ft_elements(t_game *data, int y, int x)
 		x = 0;
 		while (x < data->map.x)
 		{
-			if (data->map.cp_chart[y][x] == 'C')
+			if (data->map.chart[y][x] == 'C')
 				data->map.count_coin++;
-			if (data->map.cp_chart[y][x] == 'E')
+			if (data->map.chart[y][x] == 'E')
 				e++;
-			if (data->map.cp_chart[y][x] == 'P')
+			if (data->map.chart[y][x] == 'P')
 			{
 				p++;
 				data->map.p_x = x;
@@ -95,6 +95,7 @@ void	ft_check_map(t_game *data)
 	y = 0;
 	ft_check_walls(data, y, x);
 	ft_elements(data, y, x);
-	ft_check_move(data, y, x);
+	if (ft_check_move(data, y, x) == 1)
+		ft_error("ERROR\nINVALID MAP");
 	ft_print_map(data, y, x);
 }

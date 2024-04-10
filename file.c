@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2023/09/21 18:01:57 by smeixoei         ###   ########.fr       */
+/*   Updated: 2024/04/10 12:32:59 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_check_file(t_game *data, char *map)
 	}
 	free(line);
 	data->map.chart = ft_split(read, '\n');
-	data->map.cp_chart = ft_split(read, '\n');
 	free(read);
 	close(fd);
 }
