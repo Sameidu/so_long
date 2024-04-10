@@ -55,14 +55,14 @@ CFLAGS		=	-Wall -Wextra -Werror
 MLX			=	./minilibx-mac/Makefile.gen
 LFT			=	libft/libft.a
 INC			=	-I ./inc -I ./libft
-LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit
+LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit -fsanitize=address
 OBJ			=	$(SRC:.c=.o)
 SRC			=	so_long.c\
 				file.c\
 				img.c\
 				keys.c\
 				map.c\
-				utils.c\
+				route.c\
 
 COLOUR_GREEN=\033[0;32m
 COLOUR_RED=\033[0;31m
