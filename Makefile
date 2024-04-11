@@ -51,11 +51,11 @@
 
 NAME		=	so_long
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address -g3
 MLX			=	./minilibx-mac/Makefile.gen
 LFT			=	libft/libft.a
 INC			=	-I ./inc -I ./libft
-LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit -fsanitize=address
+LIB			=	-L ./libft -lft -L ./minilibx_mac -lmlx -framework OpenGL -framework AppKit  -fsanitize=address -g3
 OBJ			=	$(SRC:.c=.o)
 SRC			=	so_long.c\
 				file.c\
