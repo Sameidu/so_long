@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:18 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/04/10 20:00:18 by smeixoei         ###   ########.fr       */
+/*   Updated: 2024/04/11 21:42:14 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	ft_check_coin(t_game *data)
 
 static int	ft_route(t_game *data, int y, int x)
 {
-	if ((data->map.chart[y][x] == 'P' 
+	if ((data->map.chart[y][x] == 'P' || data->map.chart[y][x] == 'E' 
 		|| data->map.chart[y][x] == 'K' || data->map.chart[y][x] == 'O')
 		&& (data->map.chart[y][x + 1] == '0'
 		|| data->map.chart[y][x + 1] == 'C'
