@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:07:37 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/04/10 18:31:58 by smeixoei         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:19:45 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void	ft_check_file(t_game *data, char *map)
 	line = get_next_line(fd);
 	if (!line)
 		ft_error("ERROR\nProblems reading fd");
-	data->map.y = 0;
-	data->map.x = ft_strlen(line) - 1;
+	data->map.x =((data->map.y = 0), ft_strlen(line) - 1);
 	read = ft_strdup("");
 	while (line)
 	{
@@ -40,6 +39,8 @@ void	ft_check_file(t_game *data, char *map)
 		free(line);
 		line = get_next_line(fd);
 		data->map.y++;
+		if (data->map.x > 81 || data->map.y > 43)
+			ft_error("ERROR:\n Map too big");
 	}
 	free(line);
 	data->map.chart = ft_split(read, '\n');
