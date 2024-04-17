@@ -6,14 +6,14 @@
 #    By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/20 16:43:22 by smeixoei          #+#    #+#              #
-#    Updated: 2023/08/09 10:17:12 by smeixoei         ###   ########.fr        #
+#    Updated: 2024/04/17 20:24:22 by smeixoei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 LIB = ar -rcs
 INCLUDES = libft.h
 SRCS_MAIN = ft_isdigit.c\
