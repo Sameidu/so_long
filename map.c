@@ -19,14 +19,14 @@ void	ft_check_walls(t_game *data, int y, int x)
 	while (x < data->map.x)
 	{
 		if (data->map.chart[0][x] != '1')
-			ft_error("ERROR\nINVALID MAP");
+			ft_error("Error\nInvalid map\n");
 		x++;
 	}
 	x = 0;
 	while (x < data->map.x)
 	{
 		if (data->map.chart[y][x] != '1')
-			ft_error("ERROR\nINVALID MAP");
+			ft_error("Error\nInvalid map\n");
 		x++;
 	}
 	y = 1;
@@ -34,7 +34,7 @@ void	ft_check_walls(t_game *data, int y, int x)
 	while (y < data->map.y)
 	{
 		if (data->map.chart[y][0] != '1' || data->map.chart[y][x] != '1')
-			ft_error("ERROR\nINVALID MAP");
+			ft_error("Error\nInvalid map\n");
 		y++;
 	}
 }
@@ -68,7 +68,7 @@ void	ft_elements(t_game *data, int y, int x)
 		y++;
 	}
 	if (e != 1 || p != 1 || data->map.count_coin < 1)
-		ft_error("ERROR\nINVALID MAP");
+		ft_error("Error\nInvalid map\n");
 }
 
 void	ft_print_map(t_game *data, int y, int x)
@@ -96,6 +96,6 @@ void	ft_check_map(t_game *data)
 	ft_check_walls(data, y, x);
 	ft_elements(data, y, x);
 	if (ft_check_move(data, y, x) == 1)
-		ft_error("ERROR\nINVALID MAP");
+		ft_error("Error\nInvalid mpa\n");
 	ft_print_map(data, y, x);
 }

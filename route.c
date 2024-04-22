@@ -60,7 +60,7 @@ static int	ft_check_coin(t_game *data)
 		while (x < data->map.x)
 		{
 			if (data->map.chart[y][x] == 'C')
-				ft_error("ERROR\nINVALID MAP");
+				ft_error("Error\nINVALID MAP");
 			x++;
 		}
 		y++;

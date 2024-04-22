@@ -13,7 +13,7 @@
 NAME = libft.a
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra # -g3 -fsanitize=address
 LIB = ar -rcs
 INCLUDES = libft.h
 SRCS_MAIN = ft_isdigit.c\

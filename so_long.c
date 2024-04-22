@@ -29,7 +29,6 @@ void	ft_initialize(t_game *data, char *map)
 	ft_check_file(data, map);
 	data->w = data->map.x * SIZE;
 	data->h = data->map.y * SIZE;
-	printf("Map size: %d x %d\n", data->w, data->h);
 	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");	
 	ft_xpm_img(data);
 	ft_check_map(data);
@@ -41,14 +40,14 @@ int	main(int argc, char **argv)
 
 	if (argc != 2 || ft_ext(argv[1]))
 	{
-		ft_putstr_fd("ERROR\nInvalid arguments\n", 1);
+		ft_putstr_fd("Error\nInvalid arguments\n", 1);
 		return (0);
 	}
 	data.mlx = mlx_init();
 	if (!data.mlx)
-		ft_error("ERROR\nmlx_init failed\n");
+		ft_error("Error\nmlx_init failed\n");
 	ft_initialize(&data, argv[1]);
-	data.map.steps = 1;
+	data.map.steps = 0;
 	mlx_key_hook(data.mlx_win, ft_read_key, &data);
 	mlx_hook(data.mlx_win, 17, 0, ft_kill_game, &data);
 	mlx_loop(data.mlx);

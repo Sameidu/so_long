@@ -114,7 +114,6 @@ void	ft_right(t_game *data)
 
 int	ft_read_key(int key, t_game *data)
 {
-	printf("key: %d\n", key);
 	if (key == 53)
 		ft_kill_game(data);
 	else if (key == 13 || key == 126)

@@ -27,10 +27,10 @@ void	ft_check_file(t_game *data, char *map)
 
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
-		ft_error("ERROR\nProblems reading the file");
+		ft_error("Error\nProblems reading the file\n");
 	line = get_next_line(fd);
 	if (!line)
-		ft_error("ERROR\nProblems reading fd");
+		ft_error("Error\nProblems reading fd\n");
 	data->map.x =((data->map.y = 0), ft_strlen(line) - 1);
 	read = ft_strdup("");
 	while (line)
@@ -40,7 +40,7 @@ void	ft_check_file(t_game *data, char *map)
 		line = get_next_line(fd);
 		data->map.y++;
 		if (data->map.x > 81 || data->map.y > 43)
-			ft_error("ERROR:\n Map too big");
+			ft_error("Error\n Map too big\n");
 	}
 	free(line);
 	data->map.chart = ft_split(read, '\n');
