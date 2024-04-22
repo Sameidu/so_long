@@ -89,7 +89,7 @@ $(OBJ): %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(MLX):
-			echo "$(COLOUR_BLUE) [ ... ] | Compiling minilibx.. $(COLOUR_END)"
+			@echo "$(COLOUR_BLUE) [ ... ] | Compiling minilibx.. $(COLOUR_END)"
 			@make -s -C minilibx_mac
 			@echo "$(COLOUR_GREEN) [ OK ] | Minilibx ready! $(COLOUR_END)"
 

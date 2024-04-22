@@ -52,7 +52,7 @@ void	ft_xpm_img(t_game *data)
 			"./art/7.xpm", &data->w, &data->h);
 	if (!data->map.floor)
 		ft_error("No access to a xpm file floor");
-	data->map.m = mlx_xpm_file_to_image(data->mlx,
+	data->map.main = mlx_xpm_file_to_image(data->mlx,
 			"./art/pj.xpm", &data->w, &data->h);
 	if (!data->map.main)
 		ft_error("No access to a xpm file main");
