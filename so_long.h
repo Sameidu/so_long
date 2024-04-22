@@ -6,7 +6,7 @@
 /*   By: smeixoei <smeixoei@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:08:29 by smeixoei          #+#    #+#             */
-/*   Updated: 2024/04/10 12:33:13 by smeixoei         ###   ########.fr       */
+/*   Updated: 2024/04/22 21:44:59 by smeixoei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@
 
 typedef struct s_map
 {
-	void	*m;
-	void	*e;
-	void	*c;
-	void	*f;
-	void	*w;
+	void	*main;
+	void	*exit;
+	void	*coin;
+	void	*floor;
+	void	*wall;
 	int		x;
 	int		y;
 	int		p_x;
