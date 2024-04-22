@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
 static void	ft_route_map(t_game *data, int y, int x)
 {
-	if (data->map.chart[y][x] == 'C')
-		data->map.chart[y][x] = 'K';
-	if (data->map.chart[y][x] == '0')
-		data->map.chart[y][x] = 'O';
+	if (data->map.map[y][x] == 'C')
+		data->map.map[y][x] = 'K';
+	if (data->map.map[y][x] == '0')
+		data->map.map[y][x] = 'O';
 }
 
 static int	ft_exit(t_game *data, int y, int x)
@@ -28,18 +28,18 @@ static int	ft_exit(t_game *data, int y, int x)
 		x = 0;
 		while (x < data->map.x)
 		{
-			if ((data->map.chart[y][x] == 'E' && data->map.chart[y][x + 1] == 'P')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y][x + 1] == 'O')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y][x + 1] == 'K')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y][x - 1] == 'P')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y][x - 1] == 'O')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y][x - 1] == 'K')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y + 1][x] == 'P')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y + 1][x] == 'O')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y + 1][x] == 'K')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y - 1][x] == 'P')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y - 1][x] == 'O')
-				|| (data->map.chart[y][x] == 'E' && data->map.chart[y - 1][x] == 'K'))
+			if ((data->map.map[y][x] == 'E' && data->map.map[y][x + 1] == 'P')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y][x + 1] == 'O')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y][x + 1] == 'K')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y][x - 1] == 'P')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y][x - 1] == 'O')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y][x - 1] == 'K')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y + 1][x] == 'P')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y + 1][x] == 'O')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y + 1][x] == 'K')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y - 1][x] == 'P')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y - 1][x] == 'O')
+			|| (data->map.map[y][x] == 'E' && data->map.map[y - 1][x] == 'K'))
 				return (0);
 			x++;
 		}
@@ -59,8 +59,8 @@ static int	ft_check_coin(t_game *data)
 		x = 0;
 		while (x < data->map.x)
 		{
-			if (data->map.chart[y][x] == 'C')
-				ft_error("Error\nINVALID MAP");
+			if (data->map.map[y][x] == 'C')
+				ft_error("Error\nInvalid map");
 			x++;
 		}
 		y++;
@@ -70,21 +70,21 @@ static int	ft_check_coin(t_game *data)
 
 static int	ft_route(t_game *data, int y, int x)
 {
-	if ((data->map.chart[y][x] == 'P' || data->map.chart[y][x] == 'E' 
-		|| data->map.chart[y][x] == 'K' || data->map.chart[y][x] == 'O')
-		&& (data->map.chart[y][x + 1] == '0'
-		|| data->map.chart[y][x + 1] == 'C'
-		|| data->map.chart[y][x - 1] == '0'
-		|| data->map.chart[y][x - 1] == 'C'
-		|| data->map.chart[y + 1][x] == '0'
-		|| data->map.chart[y + 1][x] == 'C'
-		|| data->map.chart[y - 1][x] == '0'
-		|| data->map.chart[y - 1][x] == 'C'))
-			return (1);
+	if ((data->map.map[y][x] == 'P' || data->map.map[y][x] == 'E'
+		|| data->map.map[y][x] == 'K' || data->map.map[y][x] == 'O')
+		&& (data->map.map[y][x + 1] == '0'
+		|| data->map.map[y][x + 1] == 'C'
+		|| data->map.map[y][x - 1] == '0'
+		|| data->map.map[y][x - 1] == 'C'
+		|| data->map.map[y + 1][x] == '0'
+		|| data->map.map[y + 1][x] == 'C'
+		|| data->map.map[y - 1][x] == '0'
+		|| data->map.map[y - 1][x] == 'C'))
+		return (1);
 	return (0);
 }
 
-int    ft_check_move(t_game *data, int y, int x)
+int	ft_check_move(t_game *data, int y, int x)
 {
 	y = 0;
 	while (y < data->map.y)
@@ -108,6 +108,6 @@ int    ft_check_move(t_game *data, int y, int x)
 	y = 0;
 	x = 0;
 	if (ft_exit(data, y, x) == 1)
-			return (1);
+		return (1);
 	return (0);
 }

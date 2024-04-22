@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
 void	ft_error(char *str)
 {
@@ -29,7 +29,7 @@ void	ft_initialize(t_game *data, char *map)
 	ft_check_file(data, map);
 	data->w = data->map.x * SIZE;
 	data->h = data->map.y * SIZE;
-	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");	
+	data->mlx_win = mlx_new_window(data->mlx, data->w, data->h, "so_long");
 	ft_xpm_img(data);
 	ft_check_map(data);
 }

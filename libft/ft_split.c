@@ -69,7 +69,7 @@ static char	**ft_fillarray(char const *s, char c, char **aux)
 		{
 			pos_c = ft_strchr_pos(s, c);
 			if (pos_c)
-			{	
+			{
 				aux[i] = ft_substr(s, 0, pos_c);
 				if (!aux[i])
 					return (ft_free(aux));

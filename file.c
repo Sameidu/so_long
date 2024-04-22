@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
 int	ft_ext(char *map)
 {
@@ -21,7 +21,7 @@ int	ft_ext(char *map)
 
 void	ft_check_file(t_game *data, char *map)
 {
-	int 	fd;
+	int		fd;
 	char	*line;
 	char	*read;
 
@@ -31,7 +31,7 @@ void	ft_check_file(t_game *data, char *map)
 	line = get_next_line(fd);
 	if (!line)
 		ft_error("Error\nProblems reading fd\n");
-	data->map.x =((data->map.y = 0), ft_strlen(line) - 1);
+	data->map.x = ((data->map.y = 0), ft_strlen(line) - 1);
 	read = ft_strdup("");
 	while (line)
 	{
@@ -43,7 +43,7 @@ void	ft_check_file(t_game *data, char *map)
 			ft_error("Error\n Map too big\n");
 	}
 	free(line);
-	data->map.chart = ft_split(read, '\n');
+	data->map.map = ft_split(read, '\n');
 	free(read);
 	close(fd);
 }

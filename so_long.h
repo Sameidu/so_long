@@ -26,18 +26,18 @@
 
 typedef struct s_map
 {
-	void	*main;
-	void	*exit;
-	void	*coin;
-	void	*floor;
-	void	*wall;
+	void	*m;
+	void	*e;
+	void	*c;
+	void	*f;
+	void	*w;
 	int		x;
 	int		y;
 	int		p_x;
 	int		p_y;
 	int		count_coin;
 	int		steps;
-	char	**chart;
+	char	**map;
 }			t_map;
 
 typedef struct s_data
@@ -54,7 +54,8 @@ typedef struct s_data
 void	ft_check_file(t_game *data, char *map);
 void	ft_error(char *str);
 int		ft_ext(char *map);
-void	ft_put_img(t_game *data, char value, int y, int x);
+void	ft_put_obj(t_game *data, char value, int y, int x);
+void	ft_put_floor(t_game *data, int y, int x);
 void	ft_xpm_img(t_game *data);
 int		ft_read_key(int key, t_game *data);
 void	ft_check_map(t_game *data);

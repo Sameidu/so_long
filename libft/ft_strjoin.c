@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-# include <stdio.h>
 
 char	*ft_loop(char *s1, char *s2, char *src)
 {
