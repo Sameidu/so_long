@@ -12,6 +12,23 @@
 
 #include "so_long.h"
 
+void	ft_len_map(t_game *data)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	while (y < data->map.y)
+	{
+		x = 0;
+		while (x <= data->map.map[y][x])
+			x++;
+		if (x != data->map.x)
+			ft_error("Error\n Invalid map");
+		y++;
+	}
+}
+
 void	ft_check_walls(t_game *data, int y, int x)
 {
 	x = 0;
@@ -91,6 +108,7 @@ void	ft_check_map(t_game *data)
 
 	x = 0;
 	y = 0;
+	ft_len_map(data);
 	ft_check_walls(data, y, x);
 	ft_elements(data, y, x);
 	if (ft_check_move(data, y, x) == 1)

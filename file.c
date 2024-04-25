@@ -19,23 +19,39 @@ int	ft_ext(char *map)
 	return (1);
 }
 
+int	ft_open(char *map, int fd)
+{
+	fd = open(map, O_RDONLY);
+	if (fd < 0)
+		ft_error("Error\nProblems reading the file\n");
+	return (fd);
+}
+
+char	*ft_line_map(int fd)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	if (!line)
+		ft_error("Error\nProblems reading fd\n");
+	return (line);
+}
+
 void	ft_check_file(t_game *data, char *map)
 {
 	int		fd;
 	char	*line;
 	char	*read;
 
-	fd = open(map, O_RDONLY);
-	if (fd < 0)
-		ft_error("Error\nProblems reading the file\n");
-	line = get_next_line(fd);
-	if (!line)
-		ft_error("Error\nProblems reading fd\n");
+	fd = ((fd = 0), ft_open(map, fd));
+	line = ft_line_map(fd);
 	data->map.x = ((data->map.y = 0), ft_strlen(line) - 1);
 	read = ft_strdup("");
 	while (line)
 	{
-		read = ft_strjoin(read, line);
+		read = ft_strjoin_gnl(read, line);
+		if (!read)
+			ft_error("Error\n Cannot read file\n");
 		free(line);
 		line = get_next_line(fd);
 		data->map.y++;
@@ -44,6 +60,8 @@ void	ft_check_file(t_game *data, char *map)
 	}
 	free(line);
 	data->map.map = ft_split(read, '\n');
+	if (!data->map.map)
+		ft_error("Error\n Map cannot be created\n");
 	free(read);
 	close(fd);
 }
