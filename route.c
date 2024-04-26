@@ -70,8 +70,8 @@ static int	ft_check_coin(t_game *data)
 
 static int	ft_route(t_game *data, int y, int x)
 {
-	if ((data->map.map[y][x] == 'P' || data->map.map[y][x] == 'E'
-		|| data->map.map[y][x] == 'K' || data->map.map[y][x] == 'O')
+	if ((data->map.map[y][x] == 'P' || data->map.map[y][x] == 'O'
+		|| data->map.map[y][x] == 'K')
 		&& (data->map.map[y][x + 1] == '0'
 		|| data->map.map[y][x + 1] == 'C'
 		|| data->map.map[y][x - 1] == '0'
