@@ -40,6 +40,12 @@ typedef struct s_map
 	char	**map;
 }			t_map;
 
+typedef struct s_count
+{
+	int	p;
+	int	e;
+}	t_count;
+
 typedef struct s_data
 {
 	void	*mlx;

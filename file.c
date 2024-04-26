@@ -27,13 +27,15 @@ int	ft_open(char *map, int fd)
 	return (fd);
 }
 
-char	*ft_line_map(int fd)
+char	*ft_line_map(int fd, t_game *data)
 {
 	char	*line;
 
 	line = get_next_line(fd);
 	if (!line)
 		ft_error("Error\nProblems reading fd\n");
+	data->map.x = ft_strlen(line) - 1;
+	data->map.y = 0;
 	return (line);
 }
 
@@ -43,9 +45,9 @@ void	ft_check_file(t_game *data, char *map)
 	char	*line;
 	char	*read;
 
-	fd = ((fd = 0), ft_open(map, fd));
-	line = ft_line_map(fd);
-	data->map.x = ((data->map.y = 0), ft_strlen(line) - 1);
+	fd = 0;
+	fd = ft_open(map, fd);
+	line = ft_line_map(fd, data);
 	read = ft_strdup("");
 	while (line)
 	{

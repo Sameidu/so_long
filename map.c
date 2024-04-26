@@ -12,20 +12,16 @@
 
 #include "so_long.h"
 
-void	ft_len_map(t_game *data)
+void	ft_count_obj(t_game *data, int y, int x, t_count *count)
 {
-	int	y;
-	int	x;
-
-	y = 0;
-	while (y < data->map.y)
+	if (data->map.map[y][x] == 'C')
+		data->map.count_coin++;
+	if (data->map.map[y][x] == 'E')
+		count->e++;
+	if (data->map.map[y][x] == 'P')
 	{
-		x = 0;
-		while (x <= data->map.map[y][x])
-			x++;
-		if (x != data->map.x)
-			ft_error("Error\n Invalid map");
-		y++;
+		count->p++;
+		data->map.p_x = ((data->map.p_y = y), x);
 	}
 }
 
@@ -58,30 +54,20 @@ void	ft_check_walls(t_game *data, int y, int x)
 
 void	ft_elements(t_game *data, int y, int x)
 {
-	int	p;
-	int	e;
+	t_count	count;
 
-	p = ((e = 0), 0);
 	data->map.count_coin = ((y = 0), 0);
 	while (y < data->map.y - 1)
 	{
 		x = 0;
 		while (x < data->map.x)
 		{
-			if (data->map.map[y][x] == 'C')
-				data->map.count_coin++;
-			if (data->map.map[y][x] == 'E')
-				e++;
-			if (data->map.map[y][x] == 'P')
-			{
-				p++;
-				data->map.p_x = ((data->map.p_y = y), x);
-			}
+			ft_count_obj(data, y, x, &count);
 			x++;
 		}
 		y++;
 	}
-	if (e != 1 || p != 1 || data->map.count_coin < 1)
+	if (count.e != 1 || count.p != 1 || data->map.count_coin < 1)
 		ft_error("Error\nInvalid map\n");
 }
 
@@ -106,9 +92,18 @@ void	ft_check_map(t_game *data)
 	int	x;
 	int	y;
 
+	y = 0;
+	while (y < data->map.y)
+	{
+		x = 0;
+		while (x <= data->map.map[y][x])
+			x++;
+		if (x != data->map.x)
+			ft_error("Error\n Invalid map");
+		y++;
+	}
 	x = 0;
 	y = 0;
-	ft_len_map(data);
 	ft_check_walls(data, y, x);
 	ft_elements(data, y, x);
 	if (ft_check_move(data, y, x) == 1)

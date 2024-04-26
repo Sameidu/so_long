@@ -21,17 +21,25 @@ void	ft_put_floor(t_game *data, int y, int x)
 void	ft_put_obj(t_game *data, char value, int y, int x)
 {
 	if (value == '1')
+	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
 			data->map.wall, x * SIZE, y * SIZE);
+	}
 	if (value == 'K')
+	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
 			data->map.coin, x * SIZE, y * SIZE);
+	}
 	if (value == 'E')
+	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
 			data->map.exit, x * SIZE, y * SIZE);
+	}
 	if (value == 'P')
+	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
 			data->map.main, x * SIZE, y * SIZE);
+	}
 }
 
 void	ft_xpm_img(t_game *data)
