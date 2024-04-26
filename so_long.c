@@ -15,13 +15,13 @@
 void	ft_error(char *str)
 {
 	ft_putstr_fd(str, 2);
-	exit (EXIT_FAILURE);
+	exit (0);
 }
 
 int	ft_kill_game(t_game *data)
 {
 	mlx_destroy_window(data->mlx, data->mlx_win);
-	exit(EXIT_FAILURE);
+	exit (0);
 }
 
 void	ft_initialize(t_game *data, char *map)

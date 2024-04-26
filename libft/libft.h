@@ -23,7 +23,6 @@
 # include <unistd.h>
 # include <ctype.h>
 # include <stdio.h>
-# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -67,19 +66,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strchr_gnl(const char *s, int c);
 char	*ft_strjoin_gnl(char *s1, char *s2);
-
-//GNL
 void	*ft_calloc_gnl(size_t count, size_t size);
 char	*get_next_line(int fd);
-
-//PRINTF
-
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-int		ft_digits(long nb);
-int		ft_putnb(long nb);
-int		ft_puthex(size_t nb, char c);
-int		ft_putp(void *ptr);
-int		ft_printf(char const *format, ...);
 
 #endif

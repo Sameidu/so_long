@@ -35,16 +35,12 @@ typedef struct s_map
 	int		y;
 	int		p_x;
 	int		p_y;
+	int		count_pj;
+	int		count_ext;
 	int		count_coin;
 	int		steps;
 	char	**map;
 }			t_map;
-
-typedef struct s_count
-{
-	int	p;
-	int	e;
-}	t_count;
 
 typedef struct s_data
 {

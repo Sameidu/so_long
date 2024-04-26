@@ -52,8 +52,6 @@ SRCS_MAIN = ft_isdigit.c\
 			ft_split.c\
 			get_next_line.c\
 			get_next_line_utils.c\
-			ft_printf.c\
-			ft_numbers.c\
 
 OBJS_MAIN = $(SRCS_MAIN:.c=.o)
 

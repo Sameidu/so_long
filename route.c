@@ -20,7 +20,7 @@ static void	ft_route_map(t_game *data, int y, int x)
 		data->map.map[y][x] = 'O';
 }
 
-static int	ft_check_exit(t_game *data, int y, int x)
+static int	ft_exit(t_game *data, int y, int x)
 {
 	y = 0;
 	while (y < data->map.y)
@@ -107,7 +107,7 @@ int	ft_check_move(t_game *data, int y, int x)
 	ft_check_coin(data);
 	y = 0;
 	x = 0;
-	if (ft_check_exit(data, y, x) == 1)
+	if (ft_exit(data, y, x) == 1)
 		return (1);
 	return (0);
 }
